@@ -1,25 +1,38 @@
-# 🧬 SpatialDeX: A Reference-Free Spatial Transcriptomics Deconvolution Tool
+# 🛠️ SpatialDeX: Development Repository
 
-**SpatialDeX** (Spatial Deconvolution Explorer) is a regression model-based method for estimating **cell type proportions** in tumor spatial transcriptomics (ST) data. It enables **reference-free** deconvolution of spatial spots, allowing exploration of the **spatial cellular organization** of tissues without requiring single-cell RNA-seq references.
+This repository documents the **development process** of **SpatialDeX** (Spatial Deconvolution Explorer), a regression-based method for estimating **cell type proportions** in tumor spatial transcriptomics (ST) data.
 
----
-
-## 📖 Background
-
-While recent advances have enabled single-cell resolution ST, many current ST platforms remain at **multi-cellular resolution**. This makes **deconvolution** critical to infer the identity and proportion of cell types within each spot. SpatialDeX addresses this by integrating **CNV smoothing**, **ridge regression**, and **statistical filtering** to estimate major cell types in tumor tissue sections.
+> ⚠️ This is **not a finalized R package**, but a development workspace. Scripts and functions here support model building, feature extraction, and testing of core algorithms used in SpatialDeX.
 
 ---
 
-### 📦 Prerequisites
+## 📖 Overview
+
+SpatialDeX aims to address the challenge of **cell type deconvolution** in spatial transcriptomics data, especially for **multi-cell resolution** platforms. It incorporates:
+
+- **CNV smoothing and segmentation**
+- **Ridge regression**
+- **Feature coefficient inference**
+- **Cell-type identity modeling**
+
+---
+
+
+
+## ⚙️ Dependencies
+
+This repository was developed using:
 
 - R (>= 3.5.0)
 - R packages:
   - `GSVA (1.50.5)`
-  - `copykat` [v1.1.0](https://github.com/navinlabcode/copykat)
+  - `copykat` ([v1.1.0](https://github.com/navinlabcode/copykat))
   - `dplyr`
   - `devtools`
 
-### 📥 Installation
+---
+
+## For final version installation
 
 ```r
 # Install devtools if needed
