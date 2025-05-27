@@ -1,33 +1,29 @@
-
 # 🧬 SpatialDeX: A Reference-Free Spatial Transcriptomics Deconvolution Tool
 
-**SpatialDeX** is a regression model-based tool designed for estimating cell-type proportions in multicellular-resolution spatial transcriptomics (ST) spots. It enables the characterization of tumor microenvironmental heterogeneity without requiring external single-cell RNA-seq references.
+**SpatialDeX** (Spatial Deconvolution Explorer) is a regression model-based method for estimating **cell type proportions** in tumor spatial transcriptomics (ST) data. It enables **reference-free** deconvolution of spatial spots, allowing exploration of the **spatial cellular organization** of tissues without requiring single-cell RNA-seq references.
 
 ---
 
-## 📌 Highlights
+## 📖 Background
 
-- ✅ **Reference-free** cell type deconvolution for ST data  
-- 🎯 **Accurate estimation** of cell-type composition in tumor regions  
-- 🔬 Supports **pan-cancer analyses** to explore tumor progression mechanisms  
-- 📊 Performs comparably or better than existing reference-based and reference-free methods  
-- 💡 Enables deep insights into spatial cellular architecture across tissue sections  
+While recent advances have enabled single-cell resolution ST, many current ST platforms remain at **multi-cellular resolution**. This makes **deconvolution** critical to infer the identity and proportion of cell types within each spot. SpatialDeX addresses this by integrating **CNV smoothing**, **ridge regression**, and **statistical filtering** to estimate major cell types in tumor tissue sections.
 
 ---
 
-## 🚀 Getting Started
+### 📦 Prerequisites
 
-### Requirements
+- R (>= 3.5.0)
+- R packages:
+  - `GSVA (1.50.5)`
+  - `copykat` [v1.1.0](https://github.com/navinlabcode/copykat)
+  - `dplyr`
+  - `devtools`
 
-- R (>= 4.2.0)
-- Suggested packages:
-  - `Seurat`
-  - `spdep`
-  - `Matrix`
-  - `ggplot2`
-  - `data.table`
-
-Install dependencies in R:
+### 📥 Installation
 
 ```r
-install.packages(c("Seurat", "spdep", "Matrix", "ggplot2", "data.table"))
+# Install devtools if needed
+install.packages("devtools")
+
+# Install SpatialDeX from GitHub
+devtools::install_github("wang-lab/SpatialDeX", build_vignettes = TRUE)
